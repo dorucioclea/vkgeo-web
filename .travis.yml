@@ -4,24 +4,20 @@ node_js: "8"
 
 os: linux
 
+env:
+  global:
+    - secure: "co2KCujsbEUoQ3EOY888nkX8nfjcaRJU/pD+kTt7ObortBzzvzBALbUXM91ZGUo3TNlBf/Q4KSKsPZflzNx8dDDkeMlwVmdsixyG1eWHdX32k8hUdSw6VRXMJq5x73XVhc83CwSyK2NJS3P96knJgYj82E02qOPCJNtKKgmRXChTyhN0v5amQaAEpmoRz41E+105gRrrozOHDdho6RQj+qeVJiTonG4rAt2ux+ITKDjEfxS4GewQQtMPkjMbygpYlBYB2Y17kcyxMUEQa3AxBTh/02wiYvQEh/Q3L2qreD/Q24WVPLnVqrNepPzDVQdUGXUyeSwczMhX7pbpXyMGY8QLtioFKz9ENJU0NT4m187149G+MMR6umX/DEXC1bOKZx31W7Zj8i8t8mS76xA3zxkQerMFHY+WtkfMkOWzdlv2XxfGgNnZqfqv82CRfatMbSnekmJVpDyzYp7EEJozhJCSoA0SeH3mkFcZpX5/8hKUJ+xKBAV12sak2QTGSAe79c497NVpD176z8xnMZY4BTHG75rqAWzxhJDrk4xPmNqW/Q5nVBqECu8qycWePrNFXuRu3SVVkyzk8A2onFYQ0JG1l1dPabjSqAy0uoT2uWE8ZbIkoBXIgO297ay/jnEwwrWJfOrK4WcMwb78qYBmfFi8F0I72uGMdQvvZ7PY9HI="
+
 addons:
-  sonarcloud:
-    organization: "vkgeo-github"
-    token:
-      secure: "lZwoB+DnciUqa5bnWgMfo5ZOK2sNh57wYmygaIWydtVT0U46f1eEcsgLOGKJd+yFXCizDw9/kQaB6rp92vbd8AXvD62+sv8ph6EzG4vT05KyWvy4ryTKW1Q8Vg7gksicmbABR1eLc2db+VrMwMiGUZWJFTowdSEsI6/2qSCrEO/M26kcEmtWL1e1WOaSIY6bvKyj2bUNIKYVIpIh4/oWw+cGGEJkiMl+NX/iIoPVRqW0iRRQlSRrGP3DiAVtpYht693pENYGFEMXNlA2YhfQ2on0Z2SA/Cahs+h5CsN8JuzrR0cExfJRsYSFMCuxUF8ypNtQa2h6JhAlAhZq2NjF3sEMJXH9FRMchWtLOkiLr11VLOSHz+k3iCqxCNvcy8UWRiX2598JS3xF1ZJsD6eagKcLWdWujW5AKcCXgvVCFa5dM7NvPxppglapTGveQclUA4fiQ2I0YujfN4RnoyzcsapP8it6Mhl4PRMDywYi3F1AhU+0vbsm/etmFm8G3q8KxZXaNeyAXUONV3y4+rHzsNp/QOmkJHDuVpP7e6wkri0n8JaX9BxPOu5VkMx2oZ+LRxH/rm/zJoQAM5Zo8qBK3vZsLqLyLJ1/Xl+OqG8B8HOJReAieVGTIanakjAiR1VYN7so4tXKejza65a/0UM44nYxT9GYWzPSyDu9JPbgPA8="
+  coverity_scan:
+    project:
+      name: "vkgeo/vkgeo-web"
+      description: "VKGeo Friends on Map for VKontakte Web app"
+    notification_email: oleg.derevenetz@gmail.com
+    build_command_prepend: ""
+    build_command: "--no-command --fs-capture-search web/"
+    branch_pattern: coverity_scan
 
 script:
   - |
-    echo && \
-    echo "--------- UNSHALLOW GIT FOR SONAR ---------" && \
-    echo && \
-    git fetch --unshallow && \
-    if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then \
-        echo && \
-        echo "-------------- SONAR SCANNER --------------" && \
-        echo && \
-        sonar-scanner -Dsonar.projectKey=vkgeo_vkgeo-web \
-                      -Dsonar.projectName="VKGeo Web" \
-                      -Dsonar.sources=. \
-                      -Dsonar.sourceEncoding=UTF-8; \
-    fi
+    exit 0
