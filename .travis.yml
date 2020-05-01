@@ -20,9 +20,9 @@ addons:
 
 before_script:
   - |
-    echo && \
-    echo "------- UNSHALLOW GIT FOR COVERITY --------" && \
-    echo && \
+    echo
+    echo "------- UNSHALLOW GIT FOR COVERITY --------"
+    echo
     git fetch --unshallow
 
 script:
