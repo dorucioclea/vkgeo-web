@@ -18,6 +18,21 @@ addons:
     build_command: "--no-command --fs-capture-search ./"
     branch_pattern: coverity_scan
 
+before_script:
+  - |
+    echo && \
+    echo "------- UNSHALLOW GIT FOR COVERITY --------" && \
+    echo && \
+    git fetch --unshallow
+
 script:
   - |
-    exit 0
+    if [[ -f cov-int/scm_log.txt ]]; then
+        echo
+        echo "---------- BEGIN OF SCM_LOG.TXT -----------"
+        echo
+        cat cov-int/scm_log.txt
+        echo
+        echo "----------- END OF SCM_LOG.TXT ------------"
+        echo
+    fi        
