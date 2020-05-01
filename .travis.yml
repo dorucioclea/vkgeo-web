@@ -36,3 +36,5 @@ script:
         echo "----------- END OF SCM_LOG.TXT ------------"
         echo
     fi        
+
+    exit 0
