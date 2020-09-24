@@ -13,7 +13,7 @@ addons:
     project:
       name: "vkgeo/vkgeo-web"
       description: "VKGeo Friends on Map for VKontakte Web app"
-    notification_email: oleg.derevenetz@gmail.com
+    notification_email: oleg-derevenetz@yandex.ru
     build_command_prepend: ""
     build_command: "--no-command --fs-capture-search vk_iframe_app/"
     branch_pattern: coverity_scan
