@@ -37,4 +37,6 @@ script:
         echo
     fi        
 
+    sleep 5
+
     exit 0
