@@ -38,5 +38,3 @@ script:
     fi        
 
     sleep 5
-
-    exit 0
